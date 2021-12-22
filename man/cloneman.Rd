@@ -38,7 +38,7 @@ value of the aberration according to the schema:\tabular{lll}{
    0 \tab NA \tab HOMDEL \cr
    1 \tab 0 \tab HETDEL \cr
    1 \tab NA \tab HETDEL \cr
-   2 \tab 0 \tab NEUTLOH \cr
+   2 \tab 0 \tab NEUT-LOH \cr
    2 \tab 1 \tab NEUT \cr
    2 \tab NA \tab NEUT/Unknown \cr
    2+ \tab 0 \tab AMP-LOH \cr
@@ -73,9 +73,9 @@ In all cases they are expressed in fractions that are ranging between 0 and 1.
 \section{list of supported tools}{
 \tabular{lll}{
    \strong{tool} \tab \strong{type of data} \tab \strong{comments} \cr
-   FACETS \tab CNV/CI/purity/ploidy \tab  \cr
-   CloneCNA \tab CNV/CI/purity/ploidy \tab  \cr
-   ControlFreec \tab CNV/CI/purity/ploidy \tab CI not working well, ignored in this version \cr
+   \href{https://pubmed.ncbi.nlm.nih.gov/27270079/}{FACETS} \tab CNV/CI/purity/ploidy \tab  \cr
+   \href{https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7}{CloneCNA} \tab CNV/CI/purity/ploidy \tab  \cr
+   \href{http://bioinformatics.oxfordjournals.org/content/28/3/423.long}{ControlFreec} \tab CNV/CI/purity/ploidy \tab CI not working well, ignored in this version \cr
 }
 }
 

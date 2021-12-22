@@ -69,9 +69,9 @@
 #'
 #' |**tool**    |**type of data**      | **comments**|
 #' |------------|----------------------|--------------|
-#' |FACETS      | CNV/CI/purity/ploidy |              |
-#' |CloneCNA    | CNV/CI/purity/ploidy |              |
-#' |ControlFreec| CNV/CI/purity/ploidy | CI not working well, ignored in this version|
+#' |[FACETS](https://pubmed.ncbi.nlm.nih.gov/27270079/)      | CNV/CI/purity/ploidy |              |
+#' |[CloneCNA](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7)    | CNV/CI/purity/ploidy |              |
+#' |[ControlFreec](http://bioinformatics.oxfordjournals.org/content/28/3/423.long)| CNV/CI/purity/ploidy | CI not working well, ignored in this version|
 #'
 #' @section cloneman functions:
 #' **Simple parsers**

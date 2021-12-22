@@ -3,8 +3,10 @@
 \name{parseCloneCNA}
 \alias{parseCloneCNA}
 \title{Generate a cnv Granges from a dataframe created by ControlFreec (file ending in .CNVs or contains pvalues.)
-CloneCNA claims that can efficiently and accurately identify somatic copy number alterations from heterogeneous tumor samples. (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7)
-CloneCNA can detect teh cellularity of each abberation, and from that extract the subclonal abundance. This comes in the column Cellularity.
+CloneCNA claims that can efficiently and accurately identify somatic copy number alterations from
+heterogeneous tumor samples. (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7)
+CloneCNA can detect teh cellularity of each abberation, and from that extract the subclonal abundance. T
+his comes in the column Cellularity.
 When Cellularity is 0 it indicates normal
 Presumably, segments with different values in that column correspond to different clones. As a result we can tag different clones based on these frequencies.
 The column Abberation describes the type of abberation:
@@ -15,7 +17,7 @@ The column Abberation describes the type of abberation:
 |0        |	NA 	    | HOMDEL       |
 |1        |	0 	    | HETDEL       |
 |1        |	NA 	    | HETDEL       |
-|2        |	0 	    | NEUTLOH      |
+|2        |	0 	    | NEUT-LOH      |
 |2        |	1 	    | NEUT         |
 |2        |	NA 	    | NEUT/Unknown |
 |2+       |	0 	    | AMP-LOH      |
@@ -34,8 +36,10 @@ A GRanges object with the segments predicted by CloneCNA
 }
 \description{
 Generate a cnv Granges from a dataframe created by ControlFreec (file ending in .CNVs or contains pvalues.)
-CloneCNA claims that can efficiently and accurately identify somatic copy number alterations from heterogeneous tumor samples. (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7)
-CloneCNA can detect teh cellularity of each abberation, and from that extract the subclonal abundance. This comes in the column Cellularity.
+CloneCNA claims that can efficiently and accurately identify somatic copy number alterations from
+heterogeneous tumor samples. (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7)
+CloneCNA can detect teh cellularity of each abberation, and from that extract the subclonal abundance. T
+his comes in the column Cellularity.
 When Cellularity is 0 it indicates normal
 Presumably, segments with different values in that column correspond to different clones. As a result we can tag different clones based on these frequencies.
 The column Abberation describes the type of abberation:
@@ -46,7 +50,7 @@ The column Abberation describes the type of abberation:
 |0        |	NA 	    | HOMDEL       |
 |1        |	0 	    | HETDEL       |
 |1        |	NA 	    | HETDEL       |
-|2        |	0 	    | NEUTLOH      |
+|2        |	0 	    | NEUT-LOH      |
 |2        |	1 	    | NEUT         |
 |2        |	NA 	    | NEUT/Unknown |
 |2+       |	0 	    | AMP-LOH      |
