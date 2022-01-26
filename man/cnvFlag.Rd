@@ -11,7 +11,7 @@ according to the table
 |0        |	NA 	    | HOMDEL       | Homozygous deletion                                                 |
 |1        |	0 	    | HETDEL       | Heterozygous deletion (1 out of 2 alleles)                          |
 |1        |	NA 	    | HETDEL       | Heterozygous deletion (this is an edge case that should not occur)  |
-|2        |	0 	    | NEUTLOH      | Loss of heterozygosity without change in the number of alleles      |
+|2        |	0 	    | NEUT-LOH     | Loss of heterozygosity without change in the number of alleles      |
 |2        |	1 	    | NEUT         | Normal                                                              |
 |2        |	NA 	    | NEUT/Unknown | Normal or undetermined by the algorithm                             |
 |2+       |	0 	    | AMP-LOH      | Amplification with loss of heterozygosity                           |
@@ -31,7 +31,7 @@ according to the table
 |0        |	NA 	    | HOMDEL       | Homozygous deletion                                                 |
 |1        |	0 	    | HETDEL       | Heterozygous deletion (1 out of 2 alleles)                          |
 |1        |	NA 	    | HETDEL       | Heterozygous deletion (this is an edge case that should not occur)  |
-|2        |	0 	    | NEUTLOH      | Loss of heterozygosity without change in the number of alleles      |
+|2        |	0 	    | NEUT-LOH     | Loss of heterozygosity without change in the number of alleles      |
 |2        |	1 	    | NEUT         | Normal                                                              |
 |2        |	NA 	    | NEUT/Unknown | Normal or undetermined by the algorithm                             |
 |2+       |	0 	    | AMP-LOH      | Amplification with loss of heterozygosity                           |

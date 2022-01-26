@@ -9,6 +9,24 @@
 #' or as log ratios to the "normal" coverage.
 #' Each program contains produces its own specific output format, in one or multiple files.
 #'
+#' cloneman implements functions to parse and handle CNV segments and clonal information from various
+#' common packages
+#' At this point for CNV (and clonal information if available) we can use
+#' ASCAT, CloneCNA, ControlFreec, FACETS, SuperFreq.
+#' For clonal information (which includes both CNV and SNV events) we can use
+#' SuperFreq, PhyloWGS
+#' For clonal information based only on SNV events we can use
+#' PyClone-VI, Sciclone, FastClone.
+#' The structure of the object contains
+#' * dataframe with clone information, i.e. name, CCF, number of SNV events and number of CNV segments
+#' * GRangesList with CNV segments, each member of the list containst the segments assigned to a clone
+#' if the events of multiple clones are overlapping, e.g. if a maternal clone is present with all the events
+#' and a daughter clone is also having some of the maternal events
+#' the GRangesList elements must be preprocessed
+#' * GRanges list with SNV events.
+#' The parse* functions return typically GRanges objects with segments and/or SNVs
+#' the load* functions create cloneobj with more rich information
+#'
 #' This package was conceived in an attempt to normalize these outputs in a standard R format
 #' with a set of predetermined columns and objects that can be used for downstream analysis.
 #'
@@ -27,6 +45,8 @@
 #' **minor.allele.copies**: the number of copies of the _minor_ allele,
 #'
 #' **normal.allele.copies**: the number of copies expected for a normal sample (typically coming from the normal ploidy of the sample)
+#'
+#' **CCF**: represents the cellular abundance of an event and added whenever this is possible.
 #'
 #' **cnv.flag**: For each segment depending on the combination of the above values a flag is added to indicate the type and
 #' value of the aberration according to the schema:
@@ -59,10 +79,12 @@
 #'
 #' To avoid this confusion we include both in the results
 #'
-#' **variant.allele.frequency**: represents the VAF of an event. Unless there is a way to compute it from other data, it is defaulted to NA.
+#' **CCF**: represents the cellular abundance of an event.
 #'
-#' **cellular.abundance**: represents the CCF of an event.
+#' **VAF**: represents the variant allele frequency of an event. Typically for events not on amplified/deleted regions CCF=2 * VAF.
+#' If both CCF and VAF are provided then CCF is used.
 #'
+#' **clone** contains the name of the clone
 #' In all cases they are expressed in fractions that are ranging between 0 and 1.
 #'
 #' @section list of supported tools:
@@ -90,6 +112,10 @@
 #'
 #' [parseCfreec_file()]: parse a _CNV or _CNV.pvalue.txt file produced by ControlFreec
 #'
+#'
+#' [parseSuperFreq_CNV()]: parse the files from the output of SuperFreq and get the CNV segments. It assumes the standard structure of a director produced by SuperFreq
+#'
+#' [parseSuperFreq_SNV()]: parse the files from the output of SuperFreq and get the SNV events. It assumes the standard structure of a director produced by SuperFreq
 #' @docType package
 #' @name cloneman
 "_PACKAGE"

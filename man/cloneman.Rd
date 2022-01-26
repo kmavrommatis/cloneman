@@ -11,6 +11,26 @@ They typically infer the copy number segments (either as integer numbers, e.g. 1
 or as log ratios to the "normal" coverage.
 Each program contains produces its own specific output format, in one or multiple files.
 
+cloneman implements functions to parse and handle CNV segments and clonal information from various
+common packages
+At this point for CNV (and clonal information if available) we can use
+ASCAT, CloneCNA, ControlFreec, FACETS, SuperFreq.
+For clonal information (which includes both CNV and SNV events) we can use
+SuperFreq, PhyloWGS
+For clonal information based only on SNV events we can use
+PyClone-VI, Sciclone, FastClone.
+The structure of the object contains
+\itemize{
+\item dataframe with clone information, i.e. name, CCF, number of SNV events and number of CNV segments
+\item GRangesList with CNV segments, each member of the list containst the segments assigned to a clone
+if the events of multiple clones are overlapping, e.g. if a maternal clone is present with all the events
+and a daughter clone is also having some of the maternal events
+the GRangesList elements must be preprocessed
+\item GRanges list with SNV events.
+The parse* functions return typically GRanges objects with segments and/or SNVs
+the load* functions create cloneobj with more rich information
+}
+
 This package was conceived in an attempt to normalize these outputs in a standard R format
 with a set of predetermined columns and objects that can be used for downstream analysis.
 }
@@ -30,6 +50,8 @@ The following columns are added to the metadata columns of the GRanges
 \strong{minor.allele.copies}: the number of copies of the \emph{minor} allele,
 
 \strong{normal.allele.copies}: the number of copies expected for a normal sample (typically coming from the normal ploidy of the sample)
+
+\strong{CCF}: represents the cellular abundance of an event and added whenever this is possible.
 
 \strong{cnv.flag}: For each segment depending on the combination of the above values a flag is added to indicate the type and
 value of the aberration according to the schema:\tabular{lll}{
@@ -63,10 +85,12 @@ Since we typically assume a diploid baseline, the VAF is typically the frequence
 
 To avoid this confusion we include both in the results
 
-\strong{variant.allele.frequency}: represents the VAF of an event. Unless there is a way to compute it from other data, it is defaulted to NA.
+\strong{CCF}: represents the cellular abundance of an event.
 
-\strong{cellular.abundance}: represents the CCF of an event.
+\strong{VAF}: represents the variant allele frequency of an event. Typically for events not on amplified/deleted regions CCF=2 * VAF.
+If both CCF and VAF are provided then CCF is used.
 
+\strong{clone} contains the name of the clone
 In all cases they are expressed in fractions that are ranging between 0 and 1.
 }
 
@@ -96,6 +120,10 @@ In all cases they are expressed in fractions that are ranging between 0 and 1.
 \code{\link[=parseCfreec]{parseCfreec()}}: parse a dataframe with segments produced by ControlFreec.
 
 \code{\link[=parseCfreec_file]{parseCfreec_file()}}: parse a _CNV or _CNV.pvalue.txt file produced by ControlFreec
+
+\code{\link[=parseSuperFreq_CNV]{parseSuperFreq_CNV()}}: parse the files from the output of SuperFreq and get the CNV segments. It assumes the standard structure of a director produced by SuperFreq
+
+\code{\link[=parseSuperFreq_SNV]{parseSuperFreq_SNV()}}: parse the files from the output of SuperFreq and get the SNV events. It assumes the standard structure of a director produced by SuperFreq
 }
 
 \keyword{internal}
