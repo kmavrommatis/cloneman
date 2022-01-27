@@ -107,7 +107,7 @@ cloneobj=function( purity=NA, ploidy=NA, cnvlist=NULL, snvlist=NULL,method=NULL,
   if( "list" %in% class(X$segments_list)){ X$segments_list= as(X$segments_list,"GRangesList")}
   if( "list" %in% class(X$snv_list)){ X$snv_list= as(X$snv_list,"GRangesList")}
   # infer sex if necessary
-  if(is.null(X$sex)){ X$sex=inferSex( c(sf$segments_list,sf$snv_list) %>% as("GRangesList") )}
+  if(is.null(X$sex)){ X$sex=inferSex( c(X$segments_list,X$snv_list) %>% as("GRangesList") )}
   # add the seq info
   if( !is.null(X$segments_list)){GenomeInfoDb::seqinfo( X$segments_list)=GenomeInfoDb::Seqinfo( genome=X$genome)}
   if(!is.null(X$snv_list)){GenomeInfoDb::seqinfo( X$snv_list)=GenomeInfoDb::Seqinfo( genome=X$genome)}
@@ -121,6 +121,8 @@ cloneobj=function( purity=NA, ploidy=NA, cnvlist=NULL, snvlist=NULL,method=NULL,
     X$segments_list[[i]]=c( X$segments_list[[i]] ,g) %>% GenomeInfoDb::sortSeqlevels() %>% sort()
   }
 
+
+  # some checks
 
 
   X$is_finalized=TRUE
@@ -409,6 +411,6 @@ getCombinedCNV=function(X){
 
 seqlevelsStyle.cloneobj = function(X){
   return(
-  GenomeInfoDb::seqlevelsStyle(X$segments_list)
+    GenomeInfoDb::seqlevelsStyle(X$segments_list)
   )
 }
