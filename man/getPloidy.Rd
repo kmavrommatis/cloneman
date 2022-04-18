@@ -10,13 +10,13 @@ getPloidy(X)
 \item{X}{object of type cloneobj,}
 }
 \value{
-a list with the _real.ploidy_ and _ploidy_
+a list with the \emph{real.ploidy} and \emph{ploidy}
 }
 \description{
 Two parameters are returned:
 }
 \details{
-**ploidy** is the rounded ploidy (e.g. 2.1 will become 2)
+\strong{ploidy} is the rounded ploidy (e.g. 2.1 will become 2)
 
-**real_ploidy** is the actual value provided by the user
+\strong{real_ploidy} is the actual value provided by the user
 }

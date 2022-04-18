@@ -2,40 +2,48 @@
 % Please edit documentation in R/parseCNV.R
 \name{cnvFlag}
 \alias{cnvFlag}
-\title{get the flag for a CNV,
-according to the table
-|---------|----------|--------------|---------------------------------------------------------------------|
-|total cn | minor cn |	type         | meaning of type                                                     |
-|---------|----------|--------------|---------------------------------------------------------------------|
-|0        |	0 	    | HOMDEL       | Homozygous deletion                                                 |
-|0        |	NA 	    | HOMDEL       | Homozygous deletion                                                 |
-|1        |	0 	    | HETDEL       | Heterozygous deletion (1 out of 2 alleles)                          |
-|1        |	NA 	    | HETDEL       | Heterozygous deletion (this is an edge case that should not occur)  |
-|2        |	0 	    | NEUT-LOH     | Loss of heterozygosity without change in the number of alleles      |
-|2        |	1 	    | NEUT         | Normal                                                              |
-|2        |	NA 	    | NEUT/Unknown | Normal or undetermined by the algorithm                             |
-|2+       |	0 	    | AMP-LOH      | Amplification with loss of heterozygosity                           |
-|2+       |	1+ 	    | AMP          | Amplification                                                       |
-|2+       |	NA 	    | AMP-[LOH?]   | Amplification with (possible) loss of heterozygosity                |
-|---------|----------|--------------|---------------------------------------------------------------------|}
+\title{Get the flag for a CNV:}
 \usage{
 cnvFlag(major.cn = NA, minor.cn = 0, total.cn = NA)
 }
-\description{
-get the flag for a CNV,
-according to the table
-|---------|----------|--------------|---------------------------------------------------------------------|
-|total cn | minor cn |	type         | meaning of type                                                     |
-|---------|----------|--------------|---------------------------------------------------------------------|
-|0        |	0 	    | HOMDEL       | Homozygous deletion                                                 |
-|0        |	NA 	    | HOMDEL       | Homozygous deletion                                                 |
-|1        |	0 	    | HETDEL       | Heterozygous deletion (1 out of 2 alleles)                          |
-|1        |	NA 	    | HETDEL       | Heterozygous deletion (this is an edge case that should not occur)  |
-|2        |	0 	    | NEUT-LOH     | Loss of heterozygosity without change in the number of alleles      |
-|2        |	1 	    | NEUT         | Normal                                                              |
-|2        |	NA 	    | NEUT/Unknown | Normal or undetermined by the algorithm                             |
-|2+       |	0 	    | AMP-LOH      | Amplification with loss of heterozygosity                           |
-|2+       |	1+ 	    | AMP          | Amplification                                                       |
-|2+       |	NA 	    | AMP-[LOH?]   | Amplification with (possible) loss of heterozygosity                |
-|---------|----------|--------------|---------------------------------------------------------------------|
+\arguments{
+\item{major.cn}{Major Allele copy number (integer)}
+
+\item{minor.cn}{Minor Allele copy number (integer)}
+
+\item{total.cn}{Total copy number}
 }
+\value{
+Returns a string indicating the type of the copy number aberration.
+}
+\description{
+Get the flag describing a Copy number aberration according to the table
+|---------|----------|--------------|------------------------------------------------------------------------|
+|total cn | minor cn |	type         | meaning of type                                                        |
+|---------|----------|--------------|------------------------------------------------------------------------|
+|0        |	0 	    | HOMDEL       | Homozygous deletion                                                    |
+|0        |	NA 	    | HOMDEL       | Homozygous deletion                                                    |
+|1        |	0 	    | HETDEL       | Heterozygous deletion (1 out of 2 alleles)                             |
+|1        |	NA 	    | HETDEL       | Heterozygous deletion (this is an edge case that should not occur).    |
+|2        |	0 	    | NEUT-LOH     | Loss of heterozygosity without change in the number of alleles         |
+|2        |	1 	    | NEUT         | Normal                                                                 |
+|2        |	NA 	    | NEUT/Unknown | Normal or undetermined by the algorithm                                |
+|2+       |	0 	    | AMP-LOH      | Amplification with loss of heterozygosity                              |
+|2+       |	1+ 	    | AMP          | Amplification                                                          |
+|2+       |	NA 	    | AMP/LOH.     | Amplification with (possible) loss of heterozygosity. Cannot determine.|
+|---------|----------|--------------|------------------------------------------------------------------------|
+}
+\section{Notes}{
+
+The major.cn and minor.cn should add up to total.cn.
+Either total.cn or major.cn are necessary.
+If one of these is not provided the function
+will calculate it assuming total.cn=major.cn + minor.cn
+Minor.cn is not necessary, it defaults to 0 meaning that there is no minor allele
+}
+
+\section{Ploidy consideration}{
+
+This function assumes that normal ploidy is 2.
+}
+

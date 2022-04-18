@@ -36,15 +36,15 @@ for the clones
 \details{
 This information includes
 
-**Method name** the name(s) of the method(s) used to create the data for this object
+\strong{Method name} the name(s) of the method(s) used to create the data for this object
 
-**Purity**: the predicted purity of the sample (0-1)
+\strong{Purity}: the predicted purity of the sample (0-1)
 
-**Ploidy**: the predicted ploidy of the sample (default 2)
+\strong{Ploidy}: the predicted ploidy of the sample (default 2)
 
-**Copy number clones** GRangesList with segments from one or multiple clones (depending on the tool used)
+\strong{Copy number clones} GRangesList with segments from one or multiple clones (depending on the tool used)
 
-**Sample Sex** either provided by the user or inferred
+\strong{Sample Sex} either provided by the user or inferred
 
-**SNV clones** GRangesList of clones defined by the SNV VAF (or CCF)
+\strong{SNV clones} GRangesList of clones defined by the SNV VAF (or CCF)
 }

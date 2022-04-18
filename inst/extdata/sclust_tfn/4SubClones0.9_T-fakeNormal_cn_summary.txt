@@ -1,0 +1,2 @@
+sample_name	purity	ploidy	fraction_subclonal_cn	sex_estimated	status	fraction_inconsistent_segs
+4SubClones0.9_T-fakeNormal	0.49	2.01546	0.0824653	f	optimum	0.0957051

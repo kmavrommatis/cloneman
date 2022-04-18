@@ -27,29 +27,20 @@ Because the germline (diploid) segments are marked as 2 CNV for major clone and 
 we add a column with the percentage of the minor clone, by subtracting the percentage of the major clone from the calculated purity.
 
 The columns of the dataframe are:
-* ‘chrom’ the chromosome to which the segment belongs;
-
-* ‘seg’ the segment number;
-
-* ‘num.mark’ the number of SNPs in the segment;
-
-* ‘nhet’ the number of SNPs that are deemed heterozygous;
-
-* ‘cnlr.median’ the median log-ratio of the segment;
-
-* ‘mafR’ the log-odds-ratio summary for the segment;
-
-* ‘segclust’ the segment cluster to which segment belongs;
-
-* ‘cnlr.median.clust’ the median log-ratio of the segment cluster;
-
-* ‘mafR.clust’ the log-odds-ratio summary for the segment cluster;
-
-* ‘cf’ the cellular fraction of the segment;
-
-* ‘tcn’ the total copy number of the segment;
-
-* ‘lcn’ the minor copy number of the segment.
+\itemize{
+\item ‘chrom’ the chromosome to which the segment belongs;
+\item ‘seg’ the segment number;
+\item ‘num.mark’ the number of SNPs in the segment;
+\item ‘nhet’ the number of SNPs that are deemed heterozygous;
+\item ‘cnlr.median’ the median log-ratio of the segment;
+\item ‘mafR’ the log-odds-ratio summary for the segment;
+\item ‘segclust’ the segment cluster to which segment belongs;
+\item ‘cnlr.median.clust’ the median log-ratio of the segment cluster;
+\item ‘mafR.clust’ the log-odds-ratio summary for the segment cluster;
+\item ‘cf’ the cellular fraction of the segment;
+\item ‘tcn’ the total copy number of the segment;
+\item ‘lcn’ the minor copy number of the segment.
+}
 
 The column lcn.cf.em is added to capture the expected abundance of the minor clone.
 Segments with cf.em == 1 represent a single clone. If the tcn.em is 2 and lcn.em is 1 this is the germline. In all other cases cf.em represents the cellular fraction of the segment

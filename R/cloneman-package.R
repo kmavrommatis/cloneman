@@ -70,12 +70,18 @@
 #' with the default value of '2'
 #' and for the Y (chrY) chromosome this is set to 1
 #'
+#' @section SNV events:
+#'
+#' The SNV events are not parsed with explicit parsers in this case.
+#' However, VariantAnnotation is an excelent
+#'
+#'
 #' @section Clone Abundance:
 #'
 #' The clone abundance can be calculated by the CNV calling method, but can also be computed from SNVs, using tools such as Sciclone, Pyclone, Pyclone-vi, Fastclone etc.
 #' There are two ways of expressing the clone abundance
 #' one as _VAF_ (variant allele frequency) and as _CCF_ (cellular clone frequency).
-#' Since we typically assume a diploid baseline, the VAF is typically the frequence of the mutation observed on a single allele and it is half of the CCF.
+#' Since we typically assume a diploid baseline, the VAF is typically the frequency of the mutation observed on a single allele and it is half of the CCF.
 #'
 #' To avoid this confusion we include both in the results
 #'
@@ -87,20 +93,27 @@
 #' **clone** contains the name of the clone
 #' In all cases they are expressed in fractions that are ranging between 0 and 1.
 #'
+#'
+#'
+#'
 #' @section list of supported tools:
 #'
 #' |**tool**    |**type of data**      | **comments**|
 #' |------------|----------------------|--------------|
-#' |[FACETS](https://pubmed.ncbi.nlm.nih.gov/27270079/)      | CNV/CI/purity/ploidy |              |
+#' |[ASCAT](https://pubmed.ncbi.nlm.nih.gov/27930809/)| CNV/purity/ploidy | no clone identification |
 #' |[CloneCNA](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7)    | CNV/CI/purity/ploidy |              |
 #' |[ControlFreec](http://bioinformatics.oxfordjournals.org/content/28/3/423.long)| CNV/CI/purity/ploidy | CI not working well, ignored in this version|
+#' |[FACETS](https://pubmed.ncbi.nlm.nih.gov/27270079/)      | CNV/CI/purity/ploidy |
+#' |[SuperFreq](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007603)      | CNV/CI/purity/ploidy |              |
+#'
+#'
 #'
 #' @section cloneman functions:
 #' **Simple parsers**
 #'
 #' [parseFACETS()] : parse a dataframe produced by FACETS.
 #'
-#' [parseFACETS_rds()]: load an Rdata file produced by FACETS. This is the preferred method in order to retain additional information.
+#' [parseFACETS_rds()]: load an Rdata file produced by FACETS. This is the preferred method in order to retain additional information such as purity and ploidy.
 #'
 #' [parseFACETS_file()]: load a tab delimited file with segments produced by FACETS. Additional information (e.g. purity) is not retained
 #'
@@ -111,7 +124,6 @@
 #' [parseCfreec()]: parse a dataframe with segments produced by ControlFreec.
 #'
 #' [parseCfreec_file()]: parse a _CNV or _CNV.pvalue.txt file produced by ControlFreec
-#'
 #'
 #' [parseSuperFreq_CNV()]: parse the files from the output of SuperFreq and get the CNV segments. It assumes the standard structure of a director produced by SuperFreq
 #'

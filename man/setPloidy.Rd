@@ -18,7 +18,7 @@ the updated object X with the ploidy set
 Two parameters are set:
 }
 \details{
-**ploidy** is the rounded ploidy (e.g. 2.1 will become 2)
+\strong{ploidy} is the rounded ploidy (e.g. 2.1 will become 2)
 
-**real_ploidy** is the actual value provided by the user
+\strong{real_ploidy} is the actual value provided by the user
 }

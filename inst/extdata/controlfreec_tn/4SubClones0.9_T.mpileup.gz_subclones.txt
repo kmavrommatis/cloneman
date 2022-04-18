@@ -1,0 +1,325 @@
+Possible subclones for fragment chr1:20618516-26191416
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	48.3879% 
+
+Possible subclones for fragment chr1:116388037-117525330
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	34.571% 
+
+Possible subclones for fragment chr1:117622791-118899222
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	34.4333% 
+
+Possible subclones for fragment chr1:119969551-154348506
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	35.2112% 
+
+Possible subclones for fragment chr1:174988580-184590813
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	43.4483% 
+
+Possible subclones for fragment chr1:217630967-226408055
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	39.0826% 
+
+Possible subclones for fragment chr1:226548819-232026588
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	45.0341% 
+
+Possible subclones for fragment chr2:187359017-191847007
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	38.4625% 
+
+Possible subclones for fragment chr2:207149072-221567105
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	47.0641% 
+
+Possible subclones for fragment chr2:224916625-233122239
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	44.8449% 
+
+Possible subclones for fragment chr2:234495699-239895353
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	39.1835% 
+
+Possible subclones for fragment chr2:239942955-240922766
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	37.9592% 
+
+Possible subclones for fragment chr3:8659670-12749913
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	42.3221% 
+
+Possible subclones for fragment chr3:14728397-15697389
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	30.787% 
+
+Possible subclones for fragment chr3:53231390-77522968
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	41.3659% 
+
+Possible subclones for fragment chr4:151722066-153355809
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	46.0033% 
+
+Possible subclones for fragment chr4:153358472-174237659
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	30.2394% 
+
+Possible subclones for fragment chr5:21121003-55781199
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	49.0489% 
+
+Possible subclones for fragment chr6:20558419-25619712
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	37.7841% 
+
+Possible subclones for fragment chr6:28363289-36798347
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	33.6896% 
+
+Possible subclones for fragment chr6:75241177-76005520
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	38.3551% 
+
+Possible subclones for fragment chr6:143284032-144846936
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	45.2729% 
+
+Possible subclones for fragment chr6:144850958-148272491
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	43.719% 
+
+Possible subclones for fragment chr6:148342989-164687761
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	45.0119% 
+
+Possible subclones for fragment chr7:66955411-72278921
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	46.0439% 
+
+Possible subclones for fragment chr7:72403320-80462599
+Major clone is suggest to have 5 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	6	49.8936% 
+
+Possible subclones for fragment chr7:105204012-112342861
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	30.0595% 
+
+Possible subclones for fragment chr8:8702317-17090631
+Major clone is suggest to have 6 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	7	46.4641% 
+
+Possible subclones for fragment chr8:94643281-106745970
+Major clone is suggest to have 6 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	7	51.3572% 
+
+Possible subclones for fragment chr8:115492141-125436564
+Major clone is suggest to have 6 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	5	36.132% 
+
+Possible subclones for fragment chr10:16520530-52770887
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	33.1572% 
+
+Possible subclones for fragment chr10:58390776-67906972
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	46.7622% 
+
+Possible subclones for fragment chr10:67908031-68472168
+Major clone is suggest to have 4 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	37.8465% 
+
+Possible subclones for fragment chr11:32702740-36648245
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	30.5053% 
+
+Possible subclones for fragment chr11:44309509-46410475
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	36.5112% 
+
+Possible subclones for fragment chr11:46668512-48147091
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	33.947% 
+
+Possible subclones for fragment chr11:57692509-58579699
+Major clone is suggest to have 4 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	41.9137% 
+
+Possible subclones for fragment chr11:58584701-59649708
+Major clone is suggest to have 4 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	38.4085% 
+
+Possible subclones for fragment chr11:59861445-60712020
+Major clone is suggest to have 4 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	30.3895% 
+
+Possible subclones for fragment chr11:105887461-108331609
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	42.1644% 
+
+Possible subclones for fragment chr11:108331873-113418205
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	42.9497% 
+
+Possible subclones for fragment chr12:9951318-12813555
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	44.767% 
+
+Possible subclones for fragment chr12:12823116-14917400
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	41.12% 
+
+Possible subclones for fragment chr12:14920950-18684238
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	52.4618% 
+
+Possible subclones for fragment chr12:19359364-21882922
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	47.4321% 
+
+Possible subclones for fragment chr12:22517950-27635229
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	50.0139% 
+
+Possible subclones for fragment chr12:30674603-32619847
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	45.4561% 
+
+Possible subclones for fragment chr12:32710932-38321178
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	4	47.7278% 
+
+Possible subclones for fragment chr13:19179520-21413862
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	35.5409% 
+
+Possible subclones for fragment chr13:21421087-28281434
+Major clone is suggest to have 6 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	5	35.0619% 
+
+Possible subclones for fragment chr13:28287941-35211203
+Major clone is suggest to have 5 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	6	51.7913% 
+
+Possible subclones for fragment chr13:35232467-52739170
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	42.3013% 
+
+Possible subclones for fragment chr15:20245035-42840549
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	40.3326% 
+
+Possible subclones for fragment chr16:9768845-12704996
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	44.9126% 
+
+Possible subclones for fragment chr16:14186875-18795673
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	57.6584% 
+
+Possible subclones for fragment chr16:18797960-21112073
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	44.542% 
+
+Possible subclones for fragment chr16:21117245-22100544
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	43.7652% 
+
+Possible subclones for fragment chr16:22115238-24968503
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	46.1082% 
+
+Possible subclones for fragment chr16:25177921-29988056
+Major clone is suggest to have 3 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	37.8425% 
+
+Possible subclones for fragment chr16:35447284-46929148
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	3	45.4186% 
+
+Possible subclones for fragment chr16:51151184-62021465
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	44.2192% 
+
+Possible subclones for fragment chr18:28177007-43979470
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	46.3097% 
+
+Possible subclones for fragment chr18:44701260-74512538
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	47.2354% 
+
+Possible subclones for fragment chr18:74513551-77256224
+Major clone is suggest to have 1 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	2	49.0218% 
+
+Possible subclones for fragment chr20:35714262-36614395
+Major clone is suggest to have 2 copies
+	 Copy number in Subclone (different possibilities) 	 Subclonal population 
+	1	31.2998% 
+

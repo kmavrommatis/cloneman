@@ -12,16 +12,18 @@ analysis of WES and WGS datasets.
 When the genotype is - it means that the progrm did not find any SNPs to decide the correct genotype, and
 the estimated copy number depends on the logRR
 The output includes
-* chromosome
-* start position
-* end position
-* copy.number
-* status
-* genotype
-* uncertainty of the assignment
-* WilcoxonRankSumTestPvalue
-* KolmogorovSmirnovPvalue
-Note: at least for v 11.5 it is not possible to understand how subclones are coded in the output files.}
+\itemize{
+\item chromosome
+\item start position
+\item end position
+\item copy.number
+\item status
+\item genotype
+\item uncertainty of the assignment
+\item WilcoxonRankSumTestPvalue
+\item KolmogorovSmirnovPvalue
+Note: at least for v 11.5 it is not possible to understand how subclones are coded in the output files.
+}}
 \usage{
 parseCfreec(controlfreec.df, filterLowUncertainty = TRUE, pvalThreshold = 0.01)
 }
@@ -46,14 +48,16 @@ analysis of WES and WGS datasets.
 When the genotype is - it means that the progrm did not find any SNPs to decide the correct genotype, and
 the estimated copy number depends on the logRR
 The output includes
-* chromosome
-* start position
-* end position
-* copy.number
-* status
-* genotype
-* uncertainty of the assignment
-* WilcoxonRankSumTestPvalue
-* KolmogorovSmirnovPvalue
+\itemize{
+\item chromosome
+\item start position
+\item end position
+\item copy.number
+\item status
+\item genotype
+\item uncertainty of the assignment
+\item WilcoxonRankSumTestPvalue
+\item KolmogorovSmirnovPvalue
 Note: at least for v 11.5 it is not possible to understand how subclones are coded in the output files.
+}
 }

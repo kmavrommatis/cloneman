@@ -4,10 +4,12 @@
 \alias{fishPlot}
 \title{create a fishplot using the snv events (if available)}
 \usage{
-fishPlot(x)
+fishPlot(x, sname = "sample")
 }
 \arguments{
 \item{x}{a cloneobj}
+
+\item{sname}{name of sample to show on the plot}
 }
 \description{
 create a fishplot using the snv events (if available)

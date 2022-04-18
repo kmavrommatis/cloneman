@@ -2,7 +2,7 @@
 % Please edit documentation in R/superfreq.R
 \name{parseSuperFreq_CNV}
 \alias{parseSuperFreq_CNV}
-\title{Pasre the CNV segments from SuperFreq}
+\title{Parse the CNV segments from SuperFreq}
 \usage{
 parseSuperFreq_CNV(method_dir)
 }
@@ -13,5 +13,5 @@ parseSuperFreq_CNV(method_dir)
 GRanges object with all the CNV segments
 }
 \description{
-Pasre the CNV segments from SuperFreq
+Parse the CNV segments from SuperFreq
 }

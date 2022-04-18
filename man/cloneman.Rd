@@ -75,13 +75,20 @@ with the default value of '2'
 and for the Y (chrY) chromosome this is set to 1
 }
 
+\section{SNV events}{
+
+
+The SNV events are not parsed with explicit parsers in this case.
+However, VariantAnnotation is an excelent
+}
+
 \section{Clone Abundance}{
 
 
 The clone abundance can be calculated by the CNV calling method, but can also be computed from SNVs, using tools such as Sciclone, Pyclone, Pyclone-vi, Fastclone etc.
 There are two ways of expressing the clone abundance
 one as \emph{VAF} (variant allele frequency) and as \emph{CCF} (cellular clone frequency).
-Since we typically assume a diploid baseline, the VAF is typically the frequence of the mutation observed on a single allele and it is half of the CCF.
+Since we typically assume a diploid baseline, the VAF is typically the frequency of the mutation observed on a single allele and it is half of the CCF.
 
 To avoid this confusion we include both in the results
 
@@ -97,9 +104,11 @@ In all cases they are expressed in fractions that are ranging between 0 and 1.
 \section{list of supported tools}{
 \tabular{lll}{
    \strong{tool} \tab \strong{type of data} \tab \strong{comments} \cr
-   \href{https://pubmed.ncbi.nlm.nih.gov/27270079/}{FACETS} \tab CNV/CI/purity/ploidy \tab  \cr
+   \href{https://pubmed.ncbi.nlm.nih.gov/27930809/}{ASCAT} \tab CNV/purity/ploidy \tab no clone identification \cr
    \href{https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7}{CloneCNA} \tab CNV/CI/purity/ploidy \tab  \cr
    \href{http://bioinformatics.oxfordjournals.org/content/28/3/423.long}{ControlFreec} \tab CNV/CI/purity/ploidy \tab CI not working well, ignored in this version \cr
+   \href{https://pubmed.ncbi.nlm.nih.gov/27270079/}{FACETS} \tab CNV/CI/purity/ploidy \tab  \cr
+   \href{https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1007603}{SuperFreq} \tab CNV/CI/purity/ploidy \tab  \cr
 }
 }
 
@@ -109,7 +118,7 @@ In all cases they are expressed in fractions that are ranging between 0 and 1.
 
 \code{\link[=parseFACETS]{parseFACETS()}} : parse a dataframe produced by FACETS.
 
-\code{\link[=parseFACETS_rds]{parseFACETS_rds()}}: load an Rdata file produced by FACETS. This is the preferred method in order to retain additional information.
+\code{\link[=parseFACETS_rds]{parseFACETS_rds()}}: load an Rdata file produced by FACETS. This is the preferred method in order to retain additional information such as purity and ploidy.
 
 \code{\link[=parseFACETS_file]{parseFACETS_file()}}: load a tab delimited file with segments produced by FACETS. Additional information (e.g. purity) is not retained
 
@@ -126,4 +135,8 @@ In all cases they are expressed in fractions that are ranging between 0 and 1.
 \code{\link[=parseSuperFreq_SNV]{parseSuperFreq_SNV()}}: parse the files from the output of SuperFreq and get the SNV events. It assumes the standard structure of a director produced by SuperFreq
 }
 
+\author{
+\strong{Maintainer}: Konstantinos Mavrommatis \email{mavrommatis.konstantinos@gmail.com}
+
+}
 \keyword{internal}

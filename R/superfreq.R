@@ -55,7 +55,7 @@ loadSuperFreq=function(method_dir, method_name='SuperFreq', purity=NULL, ploidy=
 }
 
 
-#' Pasre the CNV segments from SuperFreq
+#' Parse the CNV segments from SuperFreq
 #' @param method_dir directory created by superfreq. Under it are expected the directories data and rivers
 #' @return GRanges object with all the CNV segments
 #' @export
