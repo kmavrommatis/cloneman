@@ -135,7 +135,10 @@ parseFACETS_file=function(facets.fn){
 #' @param facets.df Dataframe with FACETS output
 #' @return A GRanges object with the segments predicted by FACETS
 #' @export
-parseFACETS=function(facets.df){
+parseFACETS_df=function(facets.df){
+  if(! is.data.frame(facets.df)){
+    facets.df=as.data.frame(facets.df)
+  }
   facets.df[ which(facets.df$chrom==23),"chrom"]="X"
   facets.gr=GenomicRanges::makeGRangesFromDataFrame( facets.df,
                                                      keep.extra.columns = TRUE,
@@ -164,11 +167,77 @@ parseFACETS=function(facets.df){
 
 
 
+
+#' Generate a cnv Granges with FACETS data
+#'
+#' Depending on the combination of the lcn,tcn values it adds a flag under cnv_flag
+#' describing the type of the copy number abberation.
+#'
+#' FACETS is an Allele-specific copy number analysis (ASCN) tool and open-source software with a broad application
+#' to whole genome, whole-exome, as well as targeted panel sequencing platforms.
+#'
+#' It is a fully integrated stand-alone pipeline that includes sequencing BAM file post-processing, joint segmentation of total- and allele-specific read counts, and integer copy number calls corrected for tumor purity, ploidy and clonal heterogeneity.
+#' FACETS provides information about subclones, this information is used for the visualization and comparisons.
+#'
+#' Because the germline (diploid) segments are marked as 2 CNV for major clone and 1 Copy for minor (just a convention of the tool),
+#' we add a column with the percentage of the minor clone, by subtracting the percentage of the major clone from the calculated purity.
+#'
+#' The columns of the dataframe are:
+#'* ‘chrom’ the chromosome to which the segment belongs;
+#'
+#' * ‘seg’ the segment number;
+#'
+#' * ‘num.mark’ the number of SNPs in the segment;
+#'
+#' * ‘nhet’ the number of SNPs that are deemed heterozygous;
+#'
+#' * ‘cnlr.median’ the median log-ratio of the segment;
+#'
+#' * ‘mafR’ the log-odds-ratio summary for the segment;
+#'
+#' * ‘segclust’ the segment cluster to which segment belongs;
+#'
+#' * ‘cnlr.median.clust’ the median log-ratio of the segment cluster;
+#'
+#' * ‘mafR.clust’ the log-odds-ratio summary for the segment cluster;
+#'
+#' * ‘cf’ the cellular fraction of the segment;
+#'
+#' * ‘tcn’ the total copy number of the segment;
+#'
+#' * ‘lcn’ the minor copy number of the segment.
+#'
+#' The column lcn.cf.em is added to capture the expected abundance of the minor clone.
+#' Segments with cf.em == 1 represent a single clone. If the tcn.em is 2 and lcn.em is 1 this is the germline. In all other cases cf.em represents the cellular fraction of the segment
+#' Segments with lcn.em=NA segments are tricky due to the sparsity of het SNPs we cant determine lcn unambiguously.
+#'
+#' @param facets_data The object that contains the FACETS data. This function tries to detect what sort of data object that is and dispatches the parsing accordingly. Options are a filename (either .rds, .rdata with FACETS objects, or a tab delimited file), or a dataframe or a structure that can be converted to dataframe
+#' @return A GRanges object with the segments predicted by FACETS
+#' @export
+parseFACETS=function( facets_data){
+  # if the facets_data is a file we dispatch to parseFACETS_rds and parseFACETS_file
+  if( is.character(facets_data) && file.exists( facets_data)){
+    
+    if( endsWith( tolower(facets_data), ".rds") ||
+        endsWith( tolower(facets_data), ".rdata") ){
+          return(parseFACETS_rds( facets_data ))
+    }else{
+      return(parseFACETS_file( facets_data ))
+    }
+  }else if( is.data.frame( facets_data)){
+    # if the facets_data is a data frame or tibble we dispatch to parseFACETS_df
+    
+      return(parseFACETS_df(facets_data))
+  }
+}
+
+
 #' Generate a CNV object with the segments from facets and additional information
 #'
 #' We keep only the non NEUTRAL events
 #'
 #' We store each clone (as defined by the ccf) separately in the object.
+#' Before running this function one has to load the FACETS data using one of the parseFACETS functions.
 #'
 #' @import mclust
 #' @param facets    FACETS object (as provided by facets)

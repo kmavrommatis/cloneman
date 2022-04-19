@@ -20,6 +20,7 @@
 #' @param major.cn Major Allele copy number (integer)
 #' @param minor.cn Minor Allele copy number (integer)
 #' @param total.cn Total copy number
+#' na.minor  The default value that the minor allele will take if it is NA. Defaults to 0 
 #' @section Notes:
 #' The major.cn and minor.cn should add up to total.cn.
 #' Either total.cn or major.cn are necessary.
