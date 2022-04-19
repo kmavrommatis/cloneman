@@ -31,7 +31,7 @@
 #' @return Returns a string indicating the type of the copy number aberration.
 #'
 #'
-cnvFlag=function(major.cn=NA, minor.cn=0, total.cn=NA){
+cnvFlag=function(major.cn=NA, minor.cn=0, total.cn=NA, na.minor=0){
   #message(major.cn, " ", class(major.cn)," " ,minor.cn," ",class(minor.cn), " " , total.cn)
   if(is.na( total.cn ) & is.na(major.cn)){
     stop("Please provide either the total number of alleles or the major allele copies")
@@ -44,6 +44,10 @@ cnvFlag=function(major.cn=NA, minor.cn=0, total.cn=NA){
   }
   if(total.cn <0){
     stop("total.cn (major.cn + minor.cn) cannot be a negative number")
+  }
+  if(is.na(minor.cn)){
+    message("The minor.cn is not defined. This is a tricky situation in most cases, we default to 0 copies, but can be changed with the na.minor argument")
+    minor.cn=na.minor
   }
   if(minor.cn <0){
     stop("minor.cn (major.cn + minor.cn) cannot be a negative number")
