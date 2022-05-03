@@ -154,9 +154,10 @@ parseFACETS_df=function(facets.df){
     tibble::as_tibble() %>%
     dplyr::mutate( total.allele.copies=tcn.em,
                    major.allele.copies=ifelse( is.na(lcn.em), tcn.em, tcn.em-lcn.em),
-                   minor.allele.copies=lcn.em)
+                   minor.allele.copies=lcn.em,
+                   cnv.ccf=cf.em)
 
-  flags=apply(mcols_new, 1, function(K){ cnvFlag(major.cn = K['major.allele.copies'], minor.cn = K['minor.allele.copies'] )})
+  flags=apply(mcols_new, 1, function(K){ cloneman:::cnvFlag(major.cn = K['major.allele.copies'], minor.cn = K['minor.allele.copies'] )})
   mcols_new = mcols_new %>%
     dplyr::mutate( cnv.flag=flags)
 
@@ -217,7 +218,7 @@ parseFACETS_df=function(facets.df){
 parseFACETS=function( facets_data){
   # if the facets_data is a file we dispatch to parseFACETS_rds and parseFACETS_file
   if( is.character(facets_data) && file.exists( facets_data)){
-    
+
     if( endsWith( tolower(facets_data), ".rds") ||
         endsWith( tolower(facets_data), ".rdata") ){
           return(parseFACETS_rds( facets_data ))
@@ -226,7 +227,7 @@ parseFACETS=function( facets_data){
     }
   }else if( is.data.frame( facets_data)){
     # if the facets_data is a data frame or tibble we dispatch to parseFACETS_df
-    
+
       return(parseFACETS_df(facets_data))
   }
 }
@@ -234,22 +235,35 @@ parseFACETS=function( facets_data){
 
 #' Generate a CNV object with the segments from facets and additional information
 #'
-#' We keep only the non NEUTRAL events
+#' We keep all the events that the program reports
 #'
-#' We store each clone (as defined by the ccf) separately in the object.
-#' Before running this function one has to load the FACETS data using one of the parseFACETS functions.
 #'
 #' @import mclust
-#' @param facets    FACETS object (as provided by facets)
+#' @param facets    FACETS object (as provided by facets) or a file in .rds format with a FACETS object. This object is typically saved as "fit" and contains "fit$cncf", "fit$purity" and "fit$ploidy"
+#' @param sample_name name of the sample to be used in the object
 #' @export
-loadFACETS=function(facets, maxclones=4){
-  cnvs=parseFACETS(facets$cncf)
-  original.clones=cnvs$cf.em %>% unique %>% sort
-  cnvs$cnv.ccf=cnvs$cf.em
-  cnvs$cnv.clones= cnvs$cf.em %>% as.factor %>% as.numeric
+loadFACETS=function(facets, sample_name=NULL){
+  if( file.exists( facets ) && !is.list(facets)){
+    message("loading from file ",facets)
+    base::load(facets)
+  }
+  facets=fit
+  if(! is.list(facets)){
+    stop("Could not find a FACETS object")
+  }
+  if( length(intersect(c("cncf","purity","ploidy") , names( facets))) !=3 ){
+    stop("The provided FACETS object does not have cncf, ploidy and/or purity")
+  }
+  cnvs=parseFACETS_df(facets$cncf)
 
   obj=cloneobj(purity = facets$purity,
                ploidy = facets$ploidy,
-               cnvlist =  split(cnvs, cnvs$cnv.clones) %>% as(., "GRangesList"))
+               cnvlist =  cnvs,
+               method='FACETS',
+               sample_name=sample_name)
   obj
 }
+
+
+
+# do we need an EM step to assign the CNV to clones?

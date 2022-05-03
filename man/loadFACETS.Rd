@@ -4,14 +4,13 @@
 \alias{loadFACETS}
 \title{Generate a CNV object with the segments from facets and additional information}
 \usage{
-loadFACETS(facets, maxclones = 4)
+loadFACETS(facets, sample_name = NULL)
 }
 \arguments{
-\item{facets}{FACETS object (as provided by facets)}
+\item{facets}{FACETS object (as provided by facets) or a file in .rds format with a FACETS object. This object is typically saved as "fit" and contains "fit$cncf", "fit$purity" and "fit$ploidy"}
+
+\item{sample_name}{name of the sample to be used in the object}
 }
 \description{
-We keep only the non NEUTRAL events
-}
-\details{
-We store each clone (as defined by the ccf) separately in the object.
+We keep all the events that the program reports
 }

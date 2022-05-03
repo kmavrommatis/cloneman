@@ -2,16 +2,17 @@
 % Please edit documentation in R/cloneobj.R
 \name{addClone}
 \alias{addClone}
-\title{add a single CNV clone in the object}
+\title{add a single CNV or SNV set of segments in the object}
 \usage{
-addClone(X, gr, clonename = NA, type = c("snv", "cnv"))
+addClone(X, gr, type = c("snv", "cnv"))
 }
 \arguments{
 \item{X}{cloneobj}
 
-\item{gr}{GRanges withe the segments of a specific clone. The column 'CCF' of this Granges object is used to get the CCF of this clone. Alternatively the column 'VAF' can be used only if CCF is not present}
-
-\item{clonename}{the name of the clone that will be added in teh list of clones.}
+\item{gr}{GRanges withe the segments of a specific clone. The column 'snv.ccf' or 'cnv.ccf' of this Granges object is used to get the CCF of this clone.
+Alternatively the column 'snv.vaf' can be used only if CCF is not present for mutation objects
+The CCF of the CNV segments are adjusted for purity, i.e. we estimate how much it would be if the sample was 100\% pure, or - in other words - what is the CCF for the \emph{tumor} part only.
+When segments are added the gaps of the chromosomes are filled as well}
 
 \item{type}{either 'snv' or 'cnv' depending on the type of events that are added}
 }
@@ -19,5 +20,5 @@ addClone(X, gr, clonename = NA, type = c("snv", "cnv"))
 an updated cloneobj
 }
 \description{
-add a single CNV clone in the object
+add a single CNV or SNV set of segments in the object
 }

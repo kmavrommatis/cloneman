@@ -41,7 +41,7 @@ The simplest parsed output of these tools is a list of segments.
 More specifically for CNVs a GRanges object is produced with all the segments and their
 associated information
 
-The following columns are added to the metadata columns of the GRanges
+The following columns are added to the metadata columns of the GRanges by the \strong{parseXXX} functions
 
 \strong{total.allele.copies}: the total number of alleles of that segment,
 
@@ -51,7 +51,7 @@ The following columns are added to the metadata columns of the GRanges
 
 \strong{normal.allele.copies}: the number of copies expected for a normal sample (typically coming from the normal ploidy of the sample)
 
-\strong{CCF}: represents the cellular abundance of an event and added whenever this is possible.
+\strong{cnv.ccf}: represents the cellular abundance of an event and added whenever this is possible.
 
 \strong{cnv.flag}: For each segment depending on the combination of the above values a flag is added to indicate the type and
 value of the aberration according to the schema:\tabular{lll}{
@@ -69,7 +69,9 @@ value of the aberration according to the schema:\tabular{lll}{
 }
 
 
-For methods where the ploidy is predicted it is parsed and added in the column \emph{ploidy}.
+the \strong{loadXXX} functions extend the capabilities to create more complex objects where
+for methods where the ploidy is predicted it is parsed and added in the attribute \emph{ploidy}, as
+well as the purity in the attribute \emph{purity}.
 Since this package was developed with human genome in mind a column caled \emph{normal.allele.copies} is added
 with the default value of '2'
 and for the Y (chrY) chromosome this is set to 1
@@ -79,7 +81,9 @@ and for the Y (chrY) chromosome this is set to 1
 
 
 The SNV events are not parsed with explicit parsers in this case.
-However, VariantAnnotation is an excelent
+However, VariantAnnotation is an excellent tool that can be used to parse VCF files
+and subsequently use the resulting object in this package.
+There is the requirement to add the column 'snv.ccf' or 'snv.vaf' to the mutations
 }
 
 \section{Clone Abundance}{
@@ -89,7 +93,6 @@ The clone abundance can be calculated by the CNV calling method, but can also be
 There are two ways of expressing the clone abundance
 one as \emph{VAF} (variant allele frequency) and as \emph{CCF} (cellular clone frequency).
 Since we typically assume a diploid baseline, the VAF is typically the frequency of the mutation observed on a single allele and it is half of the CCF.
-
 To avoid this confusion we include both in the results
 
 \strong{CCF}: represents the cellular abundance of an event.
@@ -97,8 +100,9 @@ To avoid this confusion we include both in the results
 \strong{VAF}: represents the variant allele frequency of an event. Typically for events not on amplified/deleted regions CCF=2 * VAF.
 If both CCF and VAF are provided then CCF is used.
 
-\strong{clone} contains the name of the clone
-In all cases they are expressed in fractions that are ranging between 0 and 1.
+NOTE: this program is not trying to predict the CCF/VAF or clone abundance from the data.
+For this purpose programs like the ones listed above are designed and work very well.
+This program is intended to provide a consistent parsing mechanism for the results of such tools.
 }
 
 \section{list of supported tools}{

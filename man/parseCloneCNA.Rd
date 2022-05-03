@@ -2,24 +2,17 @@
 % Please edit documentation in R/CloneCNA.R
 \name{parseCloneCNA}
 \alias{parseCloneCNA}
-\title{Generate a cnv Granges from a dataframe created by ControlFreec (file ending in .CNVs or contains pvalues.)
-CloneCNA claims that can efficiently and accurately identify somatic copy number alterations from
-heterogeneous tumor samples. (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7)
-CloneCNA can detect teh cellularity of each abberation, and from that extract the subclonal abundance. T
-his comes in the column Cellularity.
-When Cellularity is 0 it indicates normal
-Presumably, segments with different values in that column correspond to different clones. As a result we can tag different clones based on these frequencies.}
+\title{Generate a cnv Granges from a dataframe created by CloneCNA}
 \usage{
-parseCloneCNA(clonecna.df)
+parseCloneCNA(clonecna)
 }
 \arguments{
-\item{clonecna.df}{input filename with CNV segments,}
+\item{clonecna}{input filename with CNV segments or an already parsed dataframe,}
 }
 \value{
 A GRanges object with the segments predicted by CloneCNA
 }
 \description{
-Generate a cnv Granges from a dataframe created by ControlFreec (file ending in .CNVs or contains pvalues.)
 CloneCNA claims that can efficiently and accurately identify somatic copy number alterations from
 heterogeneous tumor samples. (https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1174-7)
 CloneCNA can detect teh cellularity of each abberation, and from that extract the subclonal abundance. T

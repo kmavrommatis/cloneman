@@ -4,7 +4,7 @@
 \alias{getSubcloneTrack}
 \title{get the track for a subclone}
 \usage{
-getSubcloneTrack(X, name = NULL)
+getSubcloneTrack(segments, ploidy = 2)
 }
 \description{
 The track containst the segments with the various copy numbers

@@ -15,3 +15,11 @@ with a set of predetermined columns and objects that can be used for downstream 
 ```
 devtools::install_github(c('kmavrommatis/cloneman'),ref='main')
 ```
+
+
+## Development
+
+to be able to install it to use with other projects on the dev laptop need to 
+- mv renv to a different location `mv renv ~/renv`
+- mv renv.lock to a different location `mv renv.loc ~/renv.lock`
+- comment out the .Rprofile line which loads renv/activate.R

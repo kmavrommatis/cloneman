@@ -5,11 +5,12 @@
 \title{create the object}
 \usage{
 cloneobj(
-  purity = NA,
-  ploidy = NA,
+  purity = 1,
+  ploidy = 2,
   cnvlist = NULL,
   snvlist = NULL,
-  method = NULL,
+  method = "Unspecified",
+  sample_name = "sample",
   genome = "hg38"
 )
 }
@@ -18,9 +19,9 @@ cloneobj(
 
 \item{ploidy}{(float) Ploidy of the sample,}
 
-\item{cnvlist}{GRangesList with cnv clones,}
+\item{cnvlist}{GRanges with cnv events,}
 
-\item{snvlist}{GRangesList with snv clones,}
+\item{snvlist}{GRanges with snv events,}
 
 \item{method}{(list of string) Name of method used to predict these values}
 
@@ -42,9 +43,9 @@ This information includes
 
 \strong{Ploidy}: the predicted ploidy of the sample (default 2)
 
-\strong{Copy number clones} GRangesList with segments from one or multiple clones (depending on the tool used)
+\strong{Copy number events} GRanges with segments from one or multiple clones (depending on the tool used). Each segment with its own CCF (if available)
 
-\strong{Sample Sex} either provided by the user or inferred
+\strong{SNV clones} GRanges of SNV events, with the SNV VAF (or CCF).
 
-\strong{SNV clones} GRangesList of clones defined by the SNV VAF (or CCF)
+\strong{Sample Sex} either provided by the user or inferred'
 }

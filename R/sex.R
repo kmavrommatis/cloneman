@@ -19,11 +19,15 @@ setSex.cloneobj=function(X,v){
 #'
 #' @param X object of type cloneobj,
 #' @return the purity of the sample
+#' @export getSex
 #' @export
 getSex=function(X){
   UseMethod("getSex")
 }
-getPurity.cloneobj=function(X){
+
+#' @export getSex.cloneobj
+#' @export
+getSex.cloneobj=function(X){
   return(X$sex)
 }
 

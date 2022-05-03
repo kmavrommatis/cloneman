@@ -14,14 +14,11 @@ Description:
     For clonal information based only on SNV events we can use
     PyClone-VI, Sciclone, FastClone (neither is implemented yet).
     The structure of the object contains
-    * dataframe with clone information, i.e. name, CCF, number of SNV events and number of CNV segments
-    * GRangesList with CNV segments, each member of the list containst the segments assigned to a clone
-      if the events of multiple clones are overlapping, e.g. if a maternal clone is present with all the events
-      and a daughter clone is also having some of the maternal events
-      the GRangesList elements must be preprocessed 
+    * GRanges with CNV segments, this is coming from any supported tool with additional information added to
+    ensure consistency for all tools
     * GRanges list with SNV events.
     The parse* functions return typically GRanges objects with segments and/or SNVs
-    the load* functions create cloneobj with more rich information
+    the load* functions create cloneobj with more rich information (including purity, ploidy if supported by the tool)
     For more information check the help of the cloneman package.
 License: GPL (>= 3)
 Encoding: UTF-8
@@ -39,3 +36,8 @@ Imports:
     GenomeInfoDb
 RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE)
+
+
+
+
+

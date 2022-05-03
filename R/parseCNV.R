@@ -20,7 +20,7 @@
 #' @param major.cn Major Allele copy number (integer)
 #' @param minor.cn Minor Allele copy number (integer)
 #' @param total.cn Total copy number
-#' na.minor  The default value that the minor allele will take if it is NA. Defaults to 0 
+#' na.minor  The default value that the minor allele will take if it is NA. Defaults to 0
 #' @section Notes:
 #' The major.cn and minor.cn should add up to total.cn.
 #' Either total.cn or major.cn are necessary.
@@ -47,7 +47,7 @@ cnvFlag=function(major.cn=NA, minor.cn=0, total.cn=NA, na.minor=0){
     stop("total.cn (major.cn + minor.cn) cannot be a negative number")
   }
   if(is.na(minor.cn)){
-    message("The minor.cn is not defined. This is a tricky situation in most cases, we default to 0 copies, but can be changed with the na.minor argument")
+    #message("The minor.cn is not defined. This is a tricky situation in most cases, we default to 0 minor allele copies, but can be changed with the na.minor argument")
     minor.cn=na.minor
   }
   if(minor.cn <0){
